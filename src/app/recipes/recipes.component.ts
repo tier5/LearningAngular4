@@ -1,4 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+import { Recipe } from './recipe.modal';
 
 @Component({
   selector: 'app-recipes',
@@ -13,7 +15,7 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
   }
 
-  showRecipeDetails( obj: { name: string, description: string, imagePath: string } ) {
+  showRecipeDetails( obj: Recipe ) {
     this.recipe = obj;
   }
 

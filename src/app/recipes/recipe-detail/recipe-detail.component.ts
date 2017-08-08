@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { Recipe } from '../recipe.modal';
+
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input() recipeData: { name: string, description: string, imagePath: string };
+  @Input() recipeData: Recipe;
   constructor() { }
 
   ngOnInit() {
