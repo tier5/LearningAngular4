@@ -15,8 +15,4 @@ export class RecipeService {
     return this.recipes;
   }
 
-  selectedRecipe(recipe: Recipe) {
-    this.selectedRecipeEmitter.emit(recipe);
-  }
-
 }
