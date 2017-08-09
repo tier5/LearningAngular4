@@ -1,6 +1,10 @@
+import {EventEmitter, Output} from '@angular/core';
+
 import { Recipe } from './recipe.modal';
 
 export class RecipeService {
+
+  @Output() selectedRecipeEmitter = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe( 'Recipe Name 1', 'Recipe Description 1', 'http://www.seriouseats.com/recipes/assets_c/2016/05/20160503-fava-carrot-ricotta-salad-recipe-1-thumb-1500xauto-431710.jpg' ),
@@ -10,4 +14,9 @@ export class RecipeService {
   getRecipes() {
     return this.recipes;
   }
+
+  selectedRecipe(recipe: Recipe) {
+    this.selectedRecipeEmitter.emit(recipe);
+  }
+
 }

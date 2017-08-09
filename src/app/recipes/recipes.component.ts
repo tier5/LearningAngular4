@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Recipe } from './recipe.modal';
 import { RecipeService } from './recipe.service';
@@ -11,14 +11,12 @@ import { RecipeService } from './recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  recipe: { name: string, description: string, imagePath: string };
-  constructor() { }
+  recipe: Recipe;
+  constructor( private recipeService: RecipeService ) { }
 
   ngOnInit() {
+    this.recipeService.selectedRecipeEmitter.subscribe( (data: Recipe) => {
+      this.recipe = data;
+    } );
   }
-
-  showRecipeDetails( obj: Recipe ) {
-    this.recipe = obj;
-  }
-
 }
