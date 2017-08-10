@@ -18,10 +18,6 @@ export class RecipeListComponent implements OnInit {
     private route: ActivatedRoute
     ) { }
 
-  showRecipeDetails(recipeId: number) {
-    // this.recipeService.selectedRecipeEmitter.emit(obj);
-  }
-
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes();
   }

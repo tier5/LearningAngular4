@@ -12,11 +12,8 @@ import { RecipeService } from './recipe.service';
 export class RecipesComponent implements OnInit {
 
   @Input() recipe: Recipe;
-  constructor( private recipeService: RecipeService ) { }
 
-  ngOnInit() {
-    // this.recipeService.selectedRecipeEmitter.subscribe( (data: Recipe) => {
-    //   this.recipe = data;
-    // } );
-  }
+  constructor( ) { }
+
+  ngOnInit() { }
 }
