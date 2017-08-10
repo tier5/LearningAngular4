@@ -1,43 +1,40 @@
-<div *ngIf="recipeData!=undefined; else infoText">
-  <div class="row">
-    <div class="col-md-12">
-      <img [src]="recipeData.imagePath" style="max-height: 400px" alt="recipeData.name" class="responsive">
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    <img [src]="recipe.imagePath" style="max-height: 400px" alt="recipe.name" class="responsive">
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <h1>{{recipeData.name}}</h1>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{recipe.name}}</h1>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div appDropdown class="btn-group">
-        <button class="btn btn-primary dropdown-toggle">
-          Manage Recipe
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#" (click)="addIngredientsToShoppingList(recipeData.ingredients)">Add to Shopping List</a></li>
-          <li><a href="#">Edit Recipe</a></li>
-          <li><a href="#">Delete Recipe</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      {{recipeData.description}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ingredient of recipeData.ingredients">{{ingredient.name}} ({{ingredient.amount}})</li>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div appDropdown class="btn-group">
+      <button class="btn btn-primary dropdown-toggle">
+        Manage Recipe
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="addIngredientsToShoppingList(recipe.ingredients)">Add to Shopping List</a></li>
+        <li><a>Edit Recipe</a></li>
+        <li><a>Delete Recipe</a></li>
       </ul>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    {{ recipe.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ ingredient.name }} ({{ ingredient.amount }})</li>
+    </ul>
+  </div>
+</div>
 
-<ng-template #infoText>
-  <h3>Please Select a recipe</h3>
-</ng-template>
+
+

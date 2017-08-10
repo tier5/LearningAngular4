@@ -1,19 +1,13 @@
-import {Component, EventEmitter, Output } from '@angular/core';
+import {Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 
 export class HeaderComponent {
 
-  @Output() viewEmitter = new EventEmitter<string>();
+  constructor() { }
 
-  activeType: string = 'Recipe';
-  constructor() {}
-
-  showContent( type: string) {
-    this.activeType = type;
-    this.viewEmitter.emit(type);
-  }
 }

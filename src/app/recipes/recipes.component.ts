@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Recipe } from './recipe.modal';
 import { RecipeService } from './recipe.service';
@@ -11,12 +11,12 @@ import { RecipeService } from './recipe.service';
 })
 export class RecipesComponent implements OnInit {
 
-  recipe: Recipe;
+  @Input() recipe: Recipe;
   constructor( private recipeService: RecipeService ) { }
 
   ngOnInit() {
-    this.recipeService.selectedRecipeEmitter.subscribe( (data: Recipe) => {
-      this.recipe = data;
-    } );
+    // this.recipeService.selectedRecipeEmitter.subscribe( (data: Recipe) => {
+    //   this.recipe = data;
+    // } );
   }
 }
