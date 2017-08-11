@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
 
 import { Recipe } from '../../recipe.modal';
 
@@ -13,7 +12,7 @@ export class RecipeItemComponent implements OnInit {
   @Input() recipe: Recipe;
   @Input() index: number;
 
-  constructor( private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() { }
 
